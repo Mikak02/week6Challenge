@@ -22,15 +22,16 @@
                 <h3>Search for a City</h3>
                 <form id="user-form">
                    <label class="form-label" for="city"></label>
-                   <input name="city" id="city" type="text" autofocus="true" class="form-input" />
-                   <button type="submit" class="btn btn-primary btn-lg">Check Weather</button>
+                   <input name="city" id="city" type="text" autofocus="true" class="form-input"/>
+                   <button id="submitBtn" type="submit" class="btn btn-primary btn-lg">Check Weather</button>
                 </form>
                 
             </div>
         
-            <div class="card col-9">
-                Weather
-            </div>
+            <card class="col-9">
+                <h2 class="subtitle">Weather: <span id="weather-search-term"></span></h2>
+                <div id="weather-container"></div>
+            </card>
         </div>    
         
     </div>
@@ -41,67 +42,3 @@
     <script src="assets/js/homepage.js"></script>
 </body>
 </html>
-
-
-
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>Weather Dashboard</title>
-  </head>
-
-  
-  <body>
-    <div class="container">
-      <h1 id="temp">
-        Temp -->
-      <!-- </h1>
-      <p id="desc">
-        description
-      </p>
-      <form id="form">
-        <input 
-          id="zip" 
-          type="number" 
-          placeholder="zip code"
-          title="Please Enter a valid Zip Code"
-          pattern="^\d{5}(?:[-\s]\d{4})?$"
-        >
-        <button type="submit">Search</button>
-      </form>
-    </div>
-
-    <script>
-      // ------------------------------------------------------
-      // Developer Code
-
-      // Get Element refererences
-      const tempEl = document.getElementById('temp')
-      const descEl = document.getElementById('desc')
-      const formEl = document.getElementById('form')
-      const zipInput = document.getElementById('zip')
-
-      // Define event listeners
-      formEl.addEventListener('submit', (e) => {
-        e.preventDefault()
-        const zip = zipInput.value
-        getWeather(zip)
-      })
-
-      // Functions 
-    function getWeather(zip) {
-        const apiKey = '467355df4c808dd6134a3b64e9ace282'
-        const units = 'imperial'
-        const path = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}&units=${units}`
-        fetch(path)
-          .then(res => res.json())
-          .then(json => {
-            tempEl.innerHTML = json.main.temp
-            descEl.innerHTML = json.weather[0].description
-          })
-          .catch(err => console.log(err.message))
-      }
-           
-    </script>
-  </body>
-</html> -->
